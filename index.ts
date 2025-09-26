@@ -1,2 +1,0 @@
-// user = dbUser
-// password = spendwise
