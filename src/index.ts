@@ -18,7 +18,7 @@ const mongoURI: string = process.env.MONGO_URI || ""
 mongoose
 .connect(mongoURI)
 .then(()=> console.log("CONNECTED TO MONGODB"))
-.catch((err)=> console.error("Failed to connect to MongoDB"))
+.catch((err)=> console.error("Failed to connect to MongoDB",err))
 
 app.use("/financial-records", financialRecordRouter)
 

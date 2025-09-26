@@ -17,7 +17,7 @@ const mongoURI = process.env.MONGO_URI || "";
 mongoose_1.default
     .connect(mongoURI)
     .then(() => console.log("CONNECTED TO MONGODB"))
-    .catch((err) => console.error("Failed to connect to MongoDB"));
+    .catch((err) => console.error("Failed to connect to MongoDB",err));
 app.use("/financial-records", financial_records_1.default);
 app.listen(port, () => {
     console.log(`Server Running on Port ${port}`);
