@@ -14,11 +14,10 @@ const port = process.env.PORT || 3001;
 app.use(express_1.default.json());
 app.use((0, cors_1.default)());
 const mongoURI = process.env.MONGO_URI || "";
-console.log(mongoURI);
 mongoose_1.default
     .connect(mongoURI)
     .then(() => console.log("CONNECTED TO MONGODB"))
-    .catch((err) => console.error("Failed to connect to MongoDB",err));
+    .catch((err) => console.error("Failed to connect to MongoDB", err));
 app.use("/financial-records", financial_records_1.default);
 app.listen(port, () => {
     console.log(`Server Running on Port ${port}`);
